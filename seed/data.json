@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "admin_admin",
+      "email": "admin@mail.com",
+      "address": "jalan 1",
+      "role": "admin"
+    },
+    {
+      "username": "user_user",
+      "email": "user@mail.com",
+      "address": "jalan yang bener",
+      "role": "user"
+    }
+  ]
+}
