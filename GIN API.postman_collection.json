@@ -1,0 +1,1633 @@
+{
+	"info": {
+		"_postman_id": "46872685-093c-416a-a3de-4228a4abc4f4",
+		"name": "GIN API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Response /api Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 03:05:07 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Server Ready...! 🚀\"\n}"
+				},
+				{
+					"name": "Response /api failed API KEY",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api"
+							]
+						}
+					},
+					"status": "Proxy Authentication Required",
+					"code": 407,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 16:03:57 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid Api Key\",\n    \"message\": \"ERROR\",\n    \"status\": 407\n}"
+				}
+			]
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"user@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth/login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"user@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 09:54:03 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"email\": \"user@mail.com\",\n        \"username\": \"user_user\"\n    },\n    \"message\": \"OTP has been sent to your email\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "auth/login Failed 404",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"abv@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:36:34 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Data Not Found\",\n    \"message\": \"ERROR\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "auth/login Failed 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"Email\": \"abv@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:37:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid request body\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "auth/otp",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"user@mail.com\",\r\n    \"Otp\" : \"105129\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"otp"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth/otp Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"user@mail.com\",\r\n    \"Otp\" : \"105129\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"otp"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250YWluIjoyLCJleHBJbiI6MTY4ODM3ODA2M30.O-Wev19B09b5mtrg4M5S4GkyESmCkwO-2lEUXRPq1Xc; Path=/; Max-Age=86400; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 09:54:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"message\": \"Access granted\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "auth/otp Failed 403",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"user@mail.com\",\r\n    \"Otp\" : \"980551\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"otp"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:20:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid OTP\",\n    \"status\": 403\n}"
+				},
+				{
+					"name": "auth/otp Failed 403 OTP has expired",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"user@mail.com\",\r\n    \"Otp\" : \"275625\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"otp"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:50:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"OTP has expired\",\n    \"status\": 403\n}"
+				}
+			]
+		},
+		{
+			"name": "auth/logout",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"admin@mail.com\"\r\n    \"Otp\" : \"394435\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth/logout Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"admin@mail.com\"\r\n    \"Otp\" : \"394435\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "Authorization=; Path=/; Max-Age=0; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 10:45:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"message\": \"Success Logout\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "auth/logout Failed 401",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"admin@mail.com\"\r\n    \"Otp\" : \"394435\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:20:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid Authentication\",\n    \"message\": \"ERROR\",\n    \"status\": 401\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tasks?limit=6&page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "6"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks?limit=10&skip=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:28:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "576"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"payload\": [\n            {\n                \"id\": 1,\n                \"name\": \"Ujian Programing 5\",\n                \"description\": \"di ruangan 2 gedung C, jam 12\",\n                \"status\": true,\n                \"date\": \"2023-08-02T19:00:00+07:00\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Cuti Time\",\n                \"description\": \"ambil cuti di kantor\",\n                \"status\": false,\n                \"date\": \"2023-12-24T19:00:00+07:00\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Tugas 2\",\n                \"description\": \"kerjakan PR dari tugas 2\",\n                \"status\": false,\n                \"date\": \"2023-10-14T19:00:00+07:00\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Tugas 4\",\n                \"description\": \"kerjakan PR dari tugas 2\",\n                \"status\": false,\n                \"date\": \"2023-10-15T19:00:00+07:00\"\n            }\n        ],\n        \"count\": 4,\n        \"limit\": 10,\n        \"skip\": 0\n    },\n    \"message\": \"Success Get Tasks\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "api/tasks Failed 400 limit required",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks?skip=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:07:14 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Query limit is required\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				},
+				{
+					"name": "api/tasks Failed 400 page required",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks?limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 17:10:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Query page is required\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks/{id}",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks/{id} failed 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/909",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"909"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 10:47:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Data Not Found\",\n    \"message\": \"ERROR\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "api/tasks/{id} Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:29:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Ujian Programing 5\",\n        \"description\": \"di ruangan 2 gedung C, jam 12\",\n        \"status\": true,\n        \"date\": \"2023-08-02T19:00:00+07:00\"\n    },\n    \"message\": \"Success Get Task\",\n    \"status\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Lamar kerja\",\r\n    \"description\": \"di PT ABCDE\",\r\n    \"date\": \"2023-08-21T12:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lamar kerja\",\r\n    \"description\": \"di PT ABCDE\",\r\n    \"date\": \"2023-08-21T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:35:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "162"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"Lamar kerja\",\n        \"description\": \"di PT ABCDE\",\n        \"status\": false,\n        \"date\": \"2023-08-21T12:00:00Z\"\n    },\n    \"message\": \"Task created successfully\",\n    \"status\": 201\n}"
+				},
+				{
+					"name": "api/tasks Failed 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lamar kerja\",\r\n    \"description\": \"di PT ABCDE\"\r\n    // \"date\": \"2023-08-21T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:44:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid request body\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ujian Programing 5\",\r\n    \"description\": \"di ruangan XXX gedung C, jam 10\",\r\n    \"date\": \"2023-08-02T12:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tasks/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ujian Programing 5\",\r\n    \"description\": \"di ruangan XXX gedung C, jam 10\",\r\n    \"date\": \"2023-08-02T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:46:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "193"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Ujian Programing 5\",\n        \"description\": \"di ruangan XXX gedung C, jam 10\",\n        \"status\": \"not yet\",\n        \"date\": \"2023-08-02T12:00:00Z\"\n    },\n    \"message\": \"Task updated successfully\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "api/tasks Failed 400",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ujian Programing 5\",\r\n    \"description\": \"di ruangan XXX gedung C, jam 10\"\r\n    // \"date\": \"2023-08-02T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 15:47:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid request body\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				},
+				{
+					"name": "api/tasks Failed 404",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ujian Programing 5\",\r\n    \"description\": \"di ruangan XXX gedung C, jam 10\",\r\n    \"date\": \"2023-08-02T12:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:03:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Task not found\",\n    \"message\": \"ERROR\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tasks/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks Success",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:02:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "196"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Ujian Programing 5\",\n        \"description\": \"di ruangan XXX gedung C, jam 10\",\n        \"status\": \"done\",\n        \"date\": \"2023-08-02T19:00:00+07:00\"\n    },\n    \"message\": \"Task complete successfully\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "api/tasks Failed 404",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:03:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Task not found\",\n    \"message\": \"ERROR\",\n    \"status\": 404\n}"
+				}
+			]
+		},
+		{
+			"name": "api/tasks",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "je1dcro-20ik9g3kv0_dwefnv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tasks/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tasks",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "api/tasks Failed 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/606",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"606"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 02 Jul 2023 11:39:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Task not found\",\n    \"message\": \"ERROR\",\n    \"status\": 404\n}"
+				},
+				{
+					"name": "api/tasks Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 16:15:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "68"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"Id\": 4\n    },\n    \"message\": \"Task deleted successfully\",\n    \"status\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "task/calender/{searchTime}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "task/calender/{searchTime} Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/calenders/year?year=2023",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"calenders",
+								"year"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2023"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 05:18:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "584"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"tasks\": {\n            \"April\": [],\n            \"August\": [\n                {\n                    \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n                    \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n                    \"DeletedAt\": null,\n                    \"ID\": 0,\n                    \"Name\": \"\",\n                    \"Description\": \"\",\n                    \"IsComplete\": false,\n                    \"UserID\": 0,\n                    \"User\": {\n                        \"CreatedAt\": \"0001-01-01T00:00:00Z\",\n                        \"UpdatedAt\": \"0001-01-01T00:00:00Z\",\n                        \"DeletedAt\": null,\n                        \"ID\": 0,\n                        \"Username\": \"\",\n                        \"Email\": \"\",\n                        \"Address\": \"\",\n                        \"Otp\": \"\",\n                        \"Role\": \"\",\n                        \"Tasks\": null\n                    },\n                    \"Date\": \"0001-01-01T00:00:00Z\"\n                }\n            ],\n            \"December\": [],\n            \"February\": [],\n            \"January\": [],\n            \"July\": [],\n            \"June\": [],\n            \"March\": [],\n            \"May\": [],\n            \"November\": [],\n            \"October\": [],\n            \"September\": []\n        },\n        \"year\": 2023\n    },\n    \"message\": \"Success Get Tasks by Year\",\n    \"status\": 200\n}"
+				},
+				{
+					"name": "task/calender/{searchTime}  Failed - without query",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/tasks/calenders/year",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tasks",
+								"calenders",
+								"year"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jul 2023 05:20:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid year\",\n    \"message\": \"ERROR\",\n    \"status\": 400\n}"
+				}
+			]
+		}
+	]
+}
