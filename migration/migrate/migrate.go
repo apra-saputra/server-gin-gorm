@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"restapi/initializers"
-	"restapi/models"
+	"restapi/services/model"
 )
 
 func init() {
@@ -12,7 +12,7 @@ func init() {
 }
 
 func main() {
-	initializers.DB.AutoMigrate(&models.User{})
-	initializers.DB.AutoMigrate(&models.Task{})
+	initializers.DB.AutoMigrate(&model.User{})
+	initializers.DB.AutoMigrate(&model.Task{})
 	fmt.Println("Migrate Success")
 }

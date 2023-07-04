@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$1" = "daemon" ]; then
+if [ "$1" = "dev" ]; then
   clear
   CompileDaemon -command="./restapi"
 elif [ "$1" = "build" ]; then
@@ -8,15 +8,15 @@ elif [ "$1" = "build" ]; then
 elif [ "$1" = "start" ]; then
   go run main.go
 elif [ "$1" = "migrate" ]; then
-  go run ./migrate/migrate.go
+  go run ./migration/migrate/migrate.go
 elif [ "$1" = "seed" ]; then
-  go run ./seed/seeder.go
+  go run ./migration/seed/seeder.go
 elif [ "$1" = "-h" ] || [ "$2" = "-h" ] || [ "$1" = "help" ] || [ "$2" = "help" ]; then
   clear
   echo "usege : ./command.sh [command]"
   echo ""
   echo "command:"
-  echo "  - daemon // to run Go with CompileDaemon"
+  echo "  - dev // to run Go with CompileDaemon"
   echo "  - build // to run Go build"
   echo "  - start // to run Go start"
   echo "  - migrate // to run Go migrate Database"

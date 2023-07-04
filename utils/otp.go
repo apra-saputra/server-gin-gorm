@@ -6,8 +6,6 @@ import (
 	"time"
 )
 
-// var OtpDataMap map[string]OTPData
-
 // Fungsi untuk generate OTP
 func GenerateOTP() string {
 	rand.Seed(time.Now().UnixNano())

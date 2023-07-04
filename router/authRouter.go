@@ -1,8 +1,8 @@
 package router
 
 import (
-	"restapi/controllers"
 	"restapi/middleware"
+	"restapi/services/controller"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,8 +10,8 @@ import (
 func apiAuth(api *gin.RouterGroup) {
 	auth := api.Group("/auth")
 	{
-		auth.POST("/", controllers.Login)
-		auth.POST("/otp", controllers.OTP)
-		auth.PATCH("/logout", middleware.Authentication(), controllers.Logout)
+		auth.POST("/", controller.Login)
+		auth.POST("/otp", controller.OTP)
+		auth.PATCH("/logout", middleware.Authentication(), controller.Logout)
 	}
 }

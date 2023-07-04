@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 	"restapi/initializers"
-	"restapi/models"
+	"restapi/services/model"
 	"restapi/utils"
 	"time"
 
@@ -30,7 +30,7 @@ func Authentication() gin.HandlerFunc {
 				return
 			}
 			// find user
-			var user models.User
+			var user model.User
 			initializers.DB.First(&user, claims["contain"])
 
 			if user.ID == 0 {

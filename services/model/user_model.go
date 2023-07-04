@@ -1,6 +1,10 @@
-package models
+package model
 
-import "gorm.io/gorm"
+import (
+	"restapi/services/response"
+
+	"gorm.io/gorm"
+)
 
 type RoleType string
 
@@ -19,4 +23,13 @@ type User struct {
 	Otp      string
 	Role     RoleType `gorm:"default:'user'"`
 	Tasks    []Task
+}
+
+func (u *User) GetUser() response.UserResponse {
+	return response.UserResponse{
+		Id:       u.ID,
+		Email:    u.Email,
+		Username: u.Username,
+		Address:  u.Address,
+	}
 }
