@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"restapi/initializers"
-	"restapi/services/model"
+	"restapi/modules/model"
 	"restapi/utils"
 
 	"github.com/gin-gonic/gin"

@@ -3,9 +3,9 @@ package controller
 import (
 	"net/http"
 	"restapi/initializers"
-	"restapi/services/model"
-	"restapi/services/repository"
-	"restapi/services/response"
+	"restapi/modules/model"
+	"restapi/modules/repository"
+	"restapi/modules/response"
 	"restapi/utils"
 	"strconv"
 	"time"

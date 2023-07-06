@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 	"restapi/initializers"
-	"restapi/services/model"
-	"restapi/services/repository"
-	"restapi/services/request"
+	"restapi/modules/model"
+	"restapi/modules/repository"
+	"restapi/modules/request"
 	"restapi/utils"
 	"time"
 

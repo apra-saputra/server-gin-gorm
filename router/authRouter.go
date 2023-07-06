@@ -2,7 +2,7 @@ package router
 
 import (
 	"restapi/middleware"
-	"restapi/services/controller"
+	"restapi/modules/controller"
 
 	"github.com/gin-gonic/gin"
 )

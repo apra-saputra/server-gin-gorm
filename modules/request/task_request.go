@@ -7,3 +7,8 @@ type FormTask struct {
 	Name        string    `form:"name" json:"name" binding:"required"`
 	Date        time.Time `form:"date" json:"date" time_format:"2006-01-02" binding:"required"`
 }
+
+type StoreRedis struct {
+	Key   string
+	Value []byte
+}

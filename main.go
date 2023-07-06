@@ -8,6 +8,7 @@ import (
 func init() {
 	initializers.LoadEnv()
 	initializers.ConnectDB()
+	initializers.ConnectRedis()
 }
 
 func main() {

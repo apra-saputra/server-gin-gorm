@@ -1,7 +1,7 @@
 package model
 
 import (
-	"restapi/services/response"
+	"restapi/modules/response"
 	"time"
 
 	"gorm.io/gorm"

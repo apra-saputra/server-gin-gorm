@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 	"restapi/initializers"
-	"restapi/services/model"
+	"restapi/modules/model"
 	"restapi/utils"
 	"time"
 

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"restapi/initializers"
-	"restapi/services/model"
+	"restapi/modules/model"
 )
 
 func init() {

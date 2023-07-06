@@ -2,7 +2,7 @@ package repository
 
 import (
 	"errors"
-	"restapi/services/model"
+	"restapi/modules/model"
 )
 
 func (repo *UserRepository) FindByEmail(email string) (model.User, error) {

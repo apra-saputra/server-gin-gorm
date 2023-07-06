@@ -1,9 +1,9 @@
 package repository
 
 import (
-	"restapi/services/model"
-	"restapi/services/request"
-	"restapi/services/response"
+	"restapi/modules/model"
+	"restapi/modules/request"
+	"restapi/modules/response"
 	"time"
 )
 
